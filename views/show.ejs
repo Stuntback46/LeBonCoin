@@ -1,0 +1,11 @@
+<% include partials/header %>
+
+<h1><%=article.name%></h1>
+<img src="<%= article.image%>">
+<p><%=article.description%></p>
+<%article.comments.map(function(comment){%>
+<p>
+	<strong><%= comment.author %></strong> - <%= comment.text %>
+</p>
+<%});%>
+<% include partials/footer %>

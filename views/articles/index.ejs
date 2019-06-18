@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+
+<div class="container">
+	<header class="jumbotron">
+		<div class="container">
+			<h1>Welcome To LeBonCoin!</h1>
+			<p>View our hand-Picked Articles from all over the world!</p>
+			<p>
+				<a class="btn btn-primary btn-large" href="/articles/new">Add New Article</a>
+			</p>
+		</div>
+	</header>
+	<div class="row">
+		<div class="col-lg-12">
+			<h3>Our Most Popular Articles</h3>
+		</div>
+	</div>
+	<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+		<% articles.map((article)=>{%>
+		<div class="col-md-3 col-sm-6">
+			<div class="thumbnail">
+				<img src="<%= article.image %>">
+				<div class="caption">
+					<h4><%=article.name %></h4>
+					<p>
+						<a href="/articles/<%= article._id%>" class="btn btn-primary">More Info</a>
+				</div>
+			</div>
+			
+		</div>
+		<% });%>
+	</div>
+</div>
+<% include ../partials/footer %>
